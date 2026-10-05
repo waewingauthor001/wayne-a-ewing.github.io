@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rev. Wayne A. Ewing, PhD, Author</title>
+<meta name="description" content="Official author website of The Reverend Wayne A. Ewing PhD, Episcopal priest, pastoral counselor, and award winning author of Tears in God's Bottle and In the Land of Forgetfulness.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --forest: #3b5c42;
+    --forest-dark: #294131;
+    --brown: #6f4e37;
+    --brown-dark: #543a29;
+    --cream: #f8f2e7;
+    --cream-dark: #ecdfc9;
+    --gold: #c9a04f;
+    --gold-dark: #a97f38;
+    --text-dark: #2e2419;
+    --white: #fffdf8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.08rem;
+    color: var(--text-dark);
+    background: var(--cream);
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--brown-dark);
+    font-weight: 700;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 95px 0; }
+
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(248, 242, 231, 0.97);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--forest-dark);
+    letter-spacing: 0.5px;
+  }
+  .logo span { color: var(--gold-dark); }
+
+  nav ul { list-style: none; display: flex; gap: 30px; }
+
+  nav a {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: 0.4px;
+    color: var(--brown-dark);
+    transition: color 0.25s;
+  }
+  nav a:hover { color: var(--gold-dark); }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .menu-toggle span { width: 26px; height: 3px; background: var(--brown-dark); border-radius: 2px; }
+
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(41,65,49,0.65), rgba(41,65,49,0.65)),
+      url('images/wayne-ranch-hero.jpg') center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+    animation: heroZoom 22s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroZoom {
+    from { background-size: cover, 100%; }
+    to { background-size: cover, 112%; }
+  }
+
+  .hero-content { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+
+  .hero-content .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    color: #fdf6e3;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  }
+
+  .hero-content h1 {
+    color: var(--white);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.2;
+    margin-bottom: 22px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 36px;
+    color: #f1e9db;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 34px;
+    border-radius: 3px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .btn-primary { background: var(--gold-dark); color: var(--white); }
+  .btn-primary:hover { background: var(--gold); }
+
+  .btn-outline {
+    background: transparent;
+    border-color: var(--white);
+    color: var(--white);
+    margin-left: 14px;
+  }
+  .btn-outline:hover { background: var(--white); color: var(--brown-dark); }
+
+  .btn-secondary {
+    background: transparent;
+    border-color: var(--forest-dark);
+    color: var(--forest-dark);
+  }
+  .btn-secondary:hover { background: var(--forest-dark); color: var(--white); }
+
+  .hero-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .book-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+
+  .section-head { text-align: center; max-width: 760px; margin: 0 auto 55px; }
+  .section-head .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    color: var(--gold-dark);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); margin-bottom: 16px; }
+  .section-head p { color: #5c4c3d; }
+
+  .section-head.books-head h2 { font-size: clamp(2.2rem, 4.5vw, 3.1rem); }
+  .section-head.books-head p { font-size: 1.18rem; line-height: 1.8; }
+
+  #about { background: var(--white); }
+
+  .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
+
+  .about-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .about-photos img {
+    border-radius: 4px;
+    height: 220px;
+    object-fit: cover;
+    object-position: top center;
+    box-shadow: 0 12px 28px rgba(74,54,40,0.18);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .about-photos img:hover { transform: scale(1.02); }
+  .about-photos img:first-child { grid-column: 1 / -1; height: 280px; }
+
+  .about-text h3 { font-size: 2rem; margin-bottom: 6px; }
+  .about-text .role {
+    color: var(--gold-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    font-family: 'Playfair Display', serif;
+  }
+  .about-text p { margin-bottom: 16px; color: #4a3c30; }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .badge {
+    background: var(--cream-dark);
+    color: var(--forest-dark);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .photo-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; background: var(--brown-dark); }
+  .photo-strip img {
+    width: 100%; height: 180px; object-fit: cover; object-position: top center; opacity: 0.92;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    cursor: pointer;
+  }
+  .photo-strip img:hover { transform: scale(1.04); opacity: 1; }
+
+  #books { background: var(--cream); }
+
+  .book-card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 50px;
+    align-items: center;
+    background: var(--white);
+    border-radius: 6px;
+    padding: 45px;
+    box-shadow: 0 15px 35px rgba(74,54,40,0.08);
+    margin-bottom: 45px;
+    border-top: 4px solid var(--gold-dark);
+  }
+  .book-card:nth-child(even) { grid-template-columns: 1fr 320px; }
+  .book-card:nth-child(even) .book-cover { order: 2; }
+
+  .book-cover img { border-radius: 4px; box-shadow: 0 20px 40px rgba(74,54,40,0.28); }
+
+  .book-info .award-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    font-family: 'EB Garamond', serif;
+  }
+
+  .book-info h3 { font-size: 2rem; margin-bottom: 14px; }
+  .book-info p { color: #4a3c30; margin-bottom: 16px; }
+
+  #guide {
+    background: linear-gradient(rgba(111,78,55,0.92), rgba(84,58,41,0.92)),
+      url('images/wayne-mountain-hike.jpg') center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0;
+  }
+  #guide h2 { color: var(--white); font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 18px; }
+  #guide p { max-width: 650px; margin: 0 auto 30px; color: #f6ead9; }
+
+  .guide-select-wrap {
+    max-width: 420px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .guide-select-wrap label {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: #f6ead9;
+  }
+
+  .guide-select-wrap select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 20px;
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    background: var(--white);
+    color: var(--text-dark);
+    cursor: pointer;
+  }
+
+  .btn-white { background: var(--white); color: var(--brown-dark); font-weight: 700; width: 100%; }
+  .btn-white:hover { background: var(--cream); }
+
+  #coming-soon {
+    background: var(--forest-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 70px 0;
+  }
+  #coming-soon .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; display: block; }
+  #coming-soon h2 { color: var(--white); font-size: clamp(1.7rem, 4vw, 2.3rem); margin-bottom: 14px; }
+  #coming-soon p { color: #d9e2d6; max-width: 620px; margin: 0 auto 8px; }
+  #coming-soon .tag {
+    display: inline-block;
+    margin-top: 22px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  #trailer { background: var(--white); text-align: center; }
+
+  .video-frame {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    aspect-ratio: 16/9;
+    background: #000;
+    border: 6px solid var(--white);
+    outline: 1px solid var(--cream-dark);
+  }
+  .video-frame video { width: 100%; height: 100%; display: block; }
+
+  #reviews { background: var(--cream); }
+
+  .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+
+  .review-card {
+    background: var(--white);
+    padding: 36px 30px;
+    border-radius: 6px;
+    border-left: 4px solid var(--gold-dark);
+    box-shadow: 0 10px 25px rgba(74,54,40,0.06);
+  }
+  .review-card .stars { color: var(--gold-dark); margin-bottom: 14px; letter-spacing: 3px; }
+  .review-card p.quote { color: #4a3c30; margin-bottom: 18px; }
+  .review-card .reviewer {
+    font-weight: 700;
+    color: var(--forest-dark);
+    font-size: 0.88rem;
+    font-family: 'Playfair Display', serif;
+    padding-top: 10px;
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .reviews-cta { text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  #newsletter { background: var(--forest); color: var(--white); text-align: center; }
+  #newsletter h2 { color: var(--white); }
+  #newsletter p { color: #dce8dc; max-width: 600px; margin: 0 auto 30px; }
+
+  #mc_embed_shell {
+    max-width: 480px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  #mc_embed_shell input[type="email"] {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 14px;
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+  }
+  #mc_embed_shell input[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background: var(--gold-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  #mc_embed_shell input[type="submit"]:hover { background: var(--gold); }
+
+  #media { background: var(--white); }
+
+  .media-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .media-grid img {
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(74,54,40,0.15);
+    cursor: pointer;
+  }
+
+  .media-text h3 { font-size: 1.7rem; margin-bottom: 16px; }
+  .media-text p { color: #4a3c30; margin-bottom: 20px; }
+
+  .media-links { display: flex; flex-wrap: wrap; gap: 14px; }
+  .media-links a {
+    border: 1px solid var(--gold-dark);
+    color: var(--gold-dark);
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  .media-links a:hover { background: var(--gold-dark); color: var(--white); }
+
+  #contact { background: var(--cream-dark); }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+
+  .contact-info h3 { margin-bottom: 18px; font-size: 1.7rem; }
+  .contact-info p { margin-bottom: 22px; color: #4a3c30; }
+
+  .contact-detail {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+    font-weight: 700; color: var(--forest-dark); font-family: 'Playfair Display', serif; font-size: 0.95rem;
+  }
+
+  a.contact-detail { transition: color 0.25s; }
+  a.contact-detail:hover { color: var(--gold-dark); text-decoration: underline; }
+
+  form {
+    background: var(--white);
+    padding: 42px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(74,54,40,0.1);
+  }
+
+  form label {
+    display: block; font-weight: 700; font-size: 0.85rem;
+    margin-bottom: 6px; color: var(--brown-dark);
+    font-family: 'Playfair Display', serif;
+  }
+
+  form input, form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd0bd;
+    border-radius: 4px;
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    background: var(--cream);
+  }
+  form textarea { min-height: 130px; resize: vertical; }
+  form button { width: 100%; border: none; }
+
+  footer { background: var(--brown-dark); color: #e6d9c8; padding: 55px 0 25px; text-align: center; }
+
+  footer .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 10px; }
+  footer .tagline { color: #c9b8a4; margin-bottom: 20px; }
+
+  footer .footer-links {
+    display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
+    margin: 20px 0; font-family: 'Playfair Display', serif; font-size: 0.9rem;
+  }
+  footer .footer-links a { color: #e6d9c8; border-bottom: 1px solid transparent; }
+  footer .footer-links a:hover { color: var(--gold); border-color: var(--gold); }
+
+  footer .copyright {
+    margin-top: 30px; font-size: 0.8rem; color: #a4907a;
+    border-top: 1px solid #5c4a38; padding-top: 20px;
+  }
+
+  #lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20,15,10,0.92);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 6px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  #lightbox .close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid, .media-grid { grid-template-columns: 1fr; }
+    .media-grid img { max-width: 240px; margin: 0 auto; }
+    .book-card, .book-card:nth-child(even) { grid-template-columns: 1fr; text-align: center; }
+    .book-card:nth-child(even) .book-cover { order: 0; }
+    .book-cover { max-width: 280px; margin: 0 auto; }
+    .book-btns { justify-content: center; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .photo-strip { grid-template-columns: repeat(3, 1fr); }
+    .photo-strip img:nth-child(4), .photo-strip img:nth-child(5) { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--cream); flex-direction: column; align-items: center;
+      padding: 20px 0; display: none; border-bottom: 1px solid var(--cream-dark);
+    }
+    nav ul.open { display: flex; }
+    .menu-toggle { display: flex; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#home" class="logo">Wayne <span>A. Ewing</span></a>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#guide">Discussion Guide</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#media">Press</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">Episcopal Priest, Pastoral Counselor, Award Winning Author</span>
+    <h1>The Reverend Wayne A. Ewing, PhD</h1>
+    <p>Writing from the Wet Mountain Valley of Colorado about caregiving, contemplation, and the meeting place between dementia care and spiritual growth.</p>
+    <div class="hero-btns">
+      <a href="#books" class="btn btn-primary">Explore the Books</a>
+      <a href="#guide" class="btn btn-outline">Download Discussion Guide</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">About the Author</span>
+      <h2>A Life of Faith, Scholarship, and Devoted Caregiving</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-photos">
+        <img class="lightbox-img" src="images/wayne-book-mountains.jpg" alt="Wayne holding his book with the Sangre de Cristo peaks behind him">
+        <img class="lightbox-img" src="images/wayne-homily.jpg" alt="Wayne delivering a homily">
+        <img class="lightbox-img" src="images/wayne-shannon.jpg" alt="Wayne with his spouse Shannon">
+      </div>
+
+      <div class="about-text">
+        <h3>Rev. Wayne A. Ewing, PhD</h3>
+        <p class="role">Episcopal Priest · University and Seminary Professor · Staff Journalist</p>
+
+        <p>At 89, Wayne is a retired Episcopal priest, pastoral counselor, and academic who served as a full time caregiver for his late wife, Ann, through her five year journey with dementia. That season of his life became the foundation for his award winning books on caregiving and contemplative spirituality.</p>
+
+        <p>He now lives at his 150 year old ranch house in the Wet Mountain Valley of Custer County, Colorado, with his spouse Shannon and his 100-year-old father-in-law, Charles. He continues to write as a staff journalist for the Wet Mountain Tribune, one of the last independent, hyper local weekly newspapers in rural America.</p>
+
+        <p>Over the course of his career, Wayne has delivered countless homilies, taught at universities and seminaries, led keynote talks and seminars on the spiritual dimensions of dementia caregiving, and even performed as a Shakespearean actor.</p>
+
+        <div class="badges">
+          <span class="badge">PhD, Pastoral Theology</span>
+          <span class="badge">Seminary Professor</span>
+          <span class="badge">Award Winning Author</span>
+          <span class="badge">Staff Journalist, Wet Mountain Tribune</span>
+          <span class="badge">Keynote Speaker</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-strip reveal">
+  <img class="lightbox-img" src="images/wayne-ranch-1.jpg" alt="Wayne at the ranch">
+  <img class="lightbox-img" src="images/wayne-book-event.jpg" alt="Wayne at a book event">
+  <img class="lightbox-img" src="images/wayne-hike.jpg" alt="Wayne on a mountain hike">
+  <img class="lightbox-img" src="images/wayne-winter-ranch.jpg" alt="Wayne in winter at the ranch">
+  <img class="lightbox-img" src="images/wayne-ranch-2.jpg" alt="Wayne at his 150 year old ranch house">
+</div>
+
+<section id="books" class="reveal">
+  <div class="container">
+    <div class="section-head books-head">
+      <span class="eyebrow">The Books</span>
+      <h2>Where Dementia Care Meets Mystical Theology</h2>
+      <p>Two books that explore dementia care partnering from overlooked resources: Biblical and the commentary of mystics and contemplatives. Wayne unwraps the uncanny parallel between the language used to describe dementia from the outside looking in, with the language mystics use to describe and counsel spiritual growth from the inside looking outward.</p>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover">
+        <img src="images/tears-in-gods-bottle-cover.jpg" alt="Tears in God's Bottle book cover">
+      </div>
+      <div class="book-info">
+        <span class="award-tag">Winner of 6 Literary Awards</span>
+        <h3>Tears in God's Bottle</h3>
+        <p>Second Place Book of the Year, ForeWord Magazine. Finalist, Benjamin Franklin Award. Multiple GLYPH Awards. Winner, Clara Award.</p>
+        <p>Written out of Wayne's five years as a full time caregiver for his late wife Ann, this book offers dementia caregivers, chaplains, and spiritual directors a companion for the journey, one that finds meaning in loss, presence, and unconditional love.</p>
+        <div class="book-btns">
+          <a href="https://a.co/d/02HQjmp3" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a href="https://www.goodreads.com/book/show/128340446-tears-in-god-s-bottle?from_search=true&from_srp=true&qid=r4lQaE3dnZ&rank=6" class="btn btn-secondary" target="_blank" rel="noopener">View on Goodreads</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover">
+        <img src="images/in-the-land-of-forgetfulness-cover.jpg" alt="In the Land of Forgetfulness book cover">
+      </div>
+      <div class="book-info">
+        <span class="award-tag">Number 1 on Multiple Goodreads Listopia Lists</span>
+        <h3>In the Land of Forgetfulness</h3>
+        <p>A continued exploration of contemplative spirituality within the caregiving experience, written for personal and professional caregivers, hospice chaplains, parish nurses, grief ministers, and seminary students seeking language for the sacred in memory loss.</p>
+        <div class="book-btns">
+          <a href="https://a.co/d/05foaVXt" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a href="https://www.goodreads.com/book/show/217514408-in-the-land-of-forgetfulness?ac=1&from_search=true&qid=BfoVFpz3TE&rank=1" class="btn btn-secondary" target="_blank" rel="noopener">View on Goodreads</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="guide" class="reveal">
+  <div class="container">
+    <h2>Free Discussion Guide</h2>
+    <p>A companion guide for both books, useful for book clubs, caregiver support groups, seminary classrooms, and grief ministries. Choose a book below to download its free discussion guide.</p>
+
+    <div class="guide-select-wrap">
+      <label for="guideSelect">Select a book</label>
+      <select id="guideSelect">
+        <option value="files/discussion-guide-tears.pdf">Tears in God's Bottle</option>
+        <option value="files/discussion-guide-forgetfulness.pdf">In the Land of Forgetfulness</option>
+      </select>
+      <a href="files/discussion-guide-tears.pdf" class="btn btn-white" id="guideDownloadBtn" download>Download the Free Guide</a>
+    </div>
+  </div>
+</section>
+
+<section id="coming-soon" class="reveal">
+  <div class="container">
+    <span class="eyebrow">Coming Soon</span>
+    <h2>Beyond Belief</h2>
+    <p>Wayne's next manuscript is currently underway, continuing his exploration of faith, memory, and the presence of the sacred in everyday life. Details will be shared here as they become available.</p>
+    <span class="tag">In Progress</span>
+  </div>
+</section>
+
+<section id="trailer" class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">View the Trailer</span>
+      <h2>View the Trailer for In the Land of Forgetfulness</h2>
+      <p>Recorded in Wayne's voice against the backdrop of the Wet Mountain Valley, this short film offers a glimpse into the heart of the book.</p>
+    </div>
+    <div class="video-frame">
+      <video src="videos/trailer.mp4" controls></video>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Reader Reflections</span>
+      <h2>What Readers Are Saying</h2>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">I have read several books related to caregiving, but this one stands out because of its unique perspective and heartfelt writing. Wayne Ewing brings together personal reflection, spiritual insight, and practical understanding in a way that feels natural and authentic. I came away with a deeper appreciation for caregivers and a renewed sense of compassion for those living with dementia.</p>
+        <div class="reviewer">Goodreads Reader</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">What I appreciated most about this book was its balance. The author does not ignore the hardships that come with dementia caregiving, but he also does not leave readers feeling discouraged. Instead, he offers a perspective that is realistic, compassionate, and filled with hope. The meditations encouraged me to slow down, reflect, and find meaning in experiences that often feel difficult to understand.</p>
+        <div class="reviewer">Goodreads Reader</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">In the Land of Forgetfulness is a remarkably beautiful exploration of dementia caregiving, but what makes it truly special is the deeper question it asks about what remains when memory begins to disappear. Wayne A. Ewing approaches this difficult subject with extraordinary compassion and spiritual insight. His reflections encourage us to look beyond the obvious struggles and recognize the importance of presence, dignity, love, and connection. The parallels he draws between dementia and spiritual formation are fascinating and give the book a perspective I found both unexpected and deeply moving. This is a book that can touch caregivers, families, and spiritually curious readers in very different ways.</p>
+        <div class="reviewer">Goodreads Reader, In the Land of Forgetfulness</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Wayne Ewing's religious perspective on his beloved wife's decline is very helpful in this difficult situation, so when our friend found out that her 53 year old husband was also fading, I quickly ordered this book. It has helped my sister cope with her husband's condition also. I highly recommend it.</p>
+        <div class="reviewer">Amazon Verified Reader, Tears in God's Bottle</div>
+      </div>
+    </div>
+
+    <div class="reviews-cta">
+      <a href="https://www.goodreads.com/book/show/128340446-tears-in-god-s-bottle?from_search=true&from_srp=true&qid=r4lQaE3dnZ&rank=6" class="btn btn-secondary" target="_blank" rel="noopener">More Reviews for Tears in God's Bottle</a>
+      <a href="https://www.goodreads.com/book/show/217514408-in-the-land-of-forgetfulness?ac=1&from_search=true&qid=BfoVFpz3TE&rank=1" class="btn btn-secondary" target="_blank" rel="noopener">More Reviews for In the Land of Forgetfulness</a>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter" class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--gold);">Stay Connected</span>
+      <h2>Join Wayne's Reader Community</h2>
+      <p>Sign up to receive occasional reflections, updates on new writing, and news about Beyond Belief.</p>
+    </div>
+
+    <div id="mc_embed_shell">
+      <form action="https://yourdomain.us1.list-manage.com/subscribe/post?u=REPLACE_U&amp;id=REPLACE_ID" method="post" target="_blank" novalidate>
+        <input type="email" name="EMAIL" placeholder="Your email address" required>
+        <input type="submit" value="Subscribe">
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="media" class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Media and Press</span>
+      <h2>For Journalists, Podcasters, and Event Organizers</h2>
+    </div>
+
+    <div class="media-grid">
+      <img class="lightbox-img" src="images/wayne-headshot.jpg" alt="Professional headshot of Rev. Wayne A. Ewing">
+      <div class="media-text">
+        <h3>Press Kit and Speaking Inquiries</h3>
+        <p>Wayne is available for interviews, podcast appearances, keynote talks, and speaking engagements on dementia caregiving, contemplative spirituality, and pastoral theology. A professional headshot and full biography are available below for media use.</p>
+        <div class="media-links">
+          <a href="images/wayne-headshot.jpg" download>Download Headshot</a>
+          <a href="files/wayne-bio.pdf" download>Download Full Bio</a>
+          <a href="#contact">Request an Interview</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Contact Wayne</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Speaking, Media, and Reader Inquiries</h3>
+        <p>Whether you are a caregiver, chaplain, book club leader, or seminary program coordinator, Wayne welcomes your message and responds personally to every inquiry.</p>
+        <div class="contact-detail">Wet Mountain Valley, Custer County, Colorado</div>
+        <a href="mailto:waewing.author@gmail.com" class="contact-detail">waewing.author@gmail.com</a>
+        <div class="contact-detail">Staff Journalist, Wet Mountain Tribune</div>
+      </div>
+
+      <form action="https://formspree.io/f/xjykoldr" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+        <input type="hidden" name="_subject" value="New message from Wayne's author website">
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">Wayne A. Ewing</div>
+    <p class="tagline">Episcopal Priest, Author, Caregiver, Contemplative</p>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#books">Books</a>
+      <a href="#guide">Discussion Guide</a>
+      <a href="#reviews">Reader Reflections</a>
+      <a href="#media">Press</a>
+      <a href="https://wetmountaintribune.com" target="_blank" rel="noopener">Wet Mountain Tribune</a>
+    </div>
+
+    <div class="copyright">
+      © 2026 Rev. Wayne A. Ewing, PhD. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div id="lightbox">
+  <span class="close-btn" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged photo">
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+  });
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navMenu.classList.remove('open'));
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.lightbox-img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('open');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('open');
+    }
+  });
+
+  const guideSelect = document.getElementById('guideSelect');
+  const guideDownloadBtn = document.getElementById('guideDownloadBtn');
+  guideSelect.addEventListener('change', () => {
+    guideDownloadBtn.href = guideSelect.value;
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
